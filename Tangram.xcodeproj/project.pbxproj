@@ -180,7 +180,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Jordan Kay";
+				ORGANIZATIONNAME = CultivR;
 				TargetAttributes = {
 					17F803042255940300212525 = {
 						CreatedOnToolsVersion = 10.2;
