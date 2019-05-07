@@ -9,11 +9,12 @@
 extension UIView {
     // MARK: NSObject
     override open func awakeAfter(using coder: NSCoder) -> Any? {
-        return replacementView(forInterfaceBuilder: false) ?? super.awakeAfter(using: coder)
+        guard !isInterfaceBuilder else { return super.awakeAfter(using: coder) }
+        return replacementView ?? super.awakeAfter(using: coder)
     }
     
     override open func prepareForInterfaceBuilder() {
-        guard let contentView = replacementView(forInterfaceBuilder: true) else { return }
+        guard let contentView = replacementView else { return }
         
         contentView.frame = bounds
         addSubview(contentView)
@@ -22,14 +23,17 @@ extension UIView {
 
 // MARK: -
 private extension UIView {
-    func replacementView(forInterfaceBuilder: Bool) -> UIView? {
+    var replacementView: UIView? {
         // This view only needs to be replaced if it is nib-loadable and has no content yet
         guard let nibLoadable = self as? NibLoadable, subviews.count == 0 else { return nil }
 
-        let replacementView = try! nibLoadable.replacementViewLoadedFromNib(byInterfaceBuilder: forInterfaceBuilder)
+        let replacementView = try! nibLoadable.replacementViewLoadedFromNib(byInterfaceBuilder: isInterfaceBuilder)
+        replacementView.frame = frame
+        replacementView.backgroundColor = backgroundColor
+        replacementView.autoresizingMask = autoresizingMask
         replacementView.restorationIdentifier = restorationIdentifier
 
-        if forInterfaceBuilder {
+        if isInterfaceBuilder {
             replacementView.finishLoading(toReplace: self)
         } else {
             replacementView.setupOutletContent()
@@ -38,3 +42,6 @@ private extension UIView {
         return replacementView
     }
 }
+
+// MARK: -
+private let isInterfaceBuilder = Bundle.main.bundleIdentifier?.contains("InterfaceBuilder") ?? true
