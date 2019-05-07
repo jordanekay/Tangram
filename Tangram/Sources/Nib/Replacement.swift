@@ -18,6 +18,8 @@ extension UIView {
         
         contentView.frame = bounds
         addSubview(contentView)
+        
+        contentView.subviews.forEach { $0.prepareForInterfaceBuilder() }
     }
 }
 
