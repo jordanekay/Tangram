@@ -18,6 +18,12 @@
 		17DFCA17225EBF9F00871C7D /* Invariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFCA15225EBECD00871C7D /* Invariant.swift */; };
 		17DFCA492266541B00871C7D /* Displaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFCA45226652E200871C7D /* Displaying.swift */; };
 		17DFCA512266576200871C7D /* NibError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFCA4F2266575400871C7D /* NibError.swift */; };
+		17F29F0022824887009F5121 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F29EFF22824887009F5121 /* Border.swift */; };
+		17F29F0122824C84009F5121 /* Border.swift in Headers */ = {isa = PBXBuildFile; fileRef = 17F29EFF22824887009F5121 /* Border.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		17F29F1522825F61009F5121 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F29F1422825F61009F5121 /* Corner.swift */; };
+		17F29F1722825F67009F5121 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F29F1622825F67009F5121 /* Shadow.swift */; };
+		17F29F20228261BE009F5121 /* Corner.swift in Headers */ = {isa = PBXBuildFile; fileRef = 17F29F1422825F61009F5121 /* Corner.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		17F29F21228261C1009F5121 /* Shadow.swift in Headers */ = {isa = PBXBuildFile; fileRef = 17F29F1622825F67009F5121 /* Shadow.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		17F80310225594A300212525 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1717B5BC224C479100E2ADF3 /* View.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +40,9 @@
 		17DFCA15225EBECD00871C7D /* Invariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invariant.swift; sourceTree = "<group>"; };
 		17DFCA45226652E200871C7D /* Displaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displaying.swift; sourceTree = "<group>"; };
 		17DFCA4F2266575400871C7D /* NibError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibError.swift; sourceTree = "<group>"; };
+		17F29EFF22824887009F5121 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
+		17F29F1422825F61009F5121 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
+		17F29F1622825F67009F5121 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		17F803052255940300212525 /* Tangram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tangram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F803112255956100212525 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +139,16 @@
 			path = Tangram;
 			sourceTree = "<group>";
 		};
+		17F29EFE22824859009F5121 /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				17F29F1422825F61009F5121 /* Corner.swift */,
+				17F29F1622825F67009F5121 /* Shadow.swift */,
+				17F29EFF22824887009F5121 /* Border.swift */,
+			);
+			path = Designable;
+			sourceTree = "<group>";
+		};
 		17F8030D2255947300212525 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +156,7 @@
 				176A253F226AB2CC0064488F /* Inspectable */,
 				176A253D226AB2950064488F /* Display */,
 				176A253E226AB29B0064488F /* Custom */,
+				17F29EFE22824859009F5121 /* Designable */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -148,6 +168,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F29F20228261BE009F5121 /* Corner.swift in Headers */,
+				17F29F21228261C1009F5121 /* Shadow.swift in Headers */,
+				17F29F0122824C84009F5121 /* Border.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,12 +249,15 @@
 				17DFCA17225EBF9F00871C7D /* Invariant.swift in Sources */,
 				173A24E92268F96500ADF0C9 /* Inspectable.swift in Sources */,
 				17DFCA512266576200871C7D /* NibError.swift in Sources */,
+				17F29F1522825F61009F5121 /* Corner.swift in Sources */,
 				17284AE12267863800E0932E /* Replacement.swift in Sources */,
 				17DFCA492266541B00871C7D /* Displaying.swift in Sources */,
+				17F29F0022824887009F5121 /* Border.swift in Sources */,
 				17DFCA13225EBCA900871C7D /* Variant.swift in Sources */,
 				176A2543226E27E70064488F /* Custom.swift in Sources */,
 				173A24E22268D07D00ADF0C9 /* NibCustomLoadable.swift in Sources */,
 				17F80310225594A300212525 /* View.swift in Sources */,
+				17F29F1722825F67009F5121 /* Shadow.swift in Sources */,
 				176A2541226AB32E0064488F /* CustomInspectable.swift in Sources */,
 				176A253B226AB2210064488F /* CustomDisplaying.swift in Sources */,
 			);
