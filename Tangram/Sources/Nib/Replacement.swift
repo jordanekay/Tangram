@@ -30,10 +30,8 @@ private extension UIView {
         guard let nibLoadable = self as? NibLoadable, subviews.count == 0 else { return nil }
 
         let replacementView = try! nibLoadable.replacementViewLoadedFromNib(byInterfaceBuilder: isInterfaceBuilder)
-        replacementView.frame = frame
-        replacementView.backgroundColor = backgroundColor
-        replacementView.autoresizingMask = autoresizingMask
-        replacementView.restorationIdentifier = restorationIdentifier
+        replacementView.setProperties(from: self)
+        replacementView.addConstraints(from: self)
 
         if isInterfaceBuilder {
             replacementView.finishLoading(toReplace: self)
@@ -42,6 +40,20 @@ private extension UIView {
         }
         
         return replacementView
+    }
+    
+    func setProperties(from view: UIView) {
+        frame = view.frame
+        backgroundColor = view.backgroundColor
+        autoresizingMask = view.autoresizingMask
+        restorationIdentifier = view.restorationIdentifier
+    }
+    
+    func addConstraints(from view: UIView) {
+        for constraint in view.constraints where constraint.firstItem === view {
+            let replacementConstraint = NSLayoutConstraint(item: self, attribute: constraint.firstAttribute, relatedBy: constraint.relation, toItem: constraint.secondItem, attribute: constraint.secondAttribute, multiplier: constraint.multiplier, constant: constraint.constant)
+            addConstraint(replacementConstraint)
+        }
     }
 }
 
