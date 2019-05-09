@@ -16,15 +16,6 @@
 
 // MARK: -
 public extension BorderedView {
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return borderLayer.borderWidth
-        }
-        set {
-            borderLayer.borderWidth = newValue
-        }
-    }
-    
     @IBInspectable var borderColor: UIColor? {
         get {
             return borderLayer.borderColor.map(UIColor.init)
@@ -49,16 +40,18 @@ public extension BorderedView {
 
 // MARK: -
 private extension BorderedView {
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return borderLayer.borderWidth
+        }
+        set {
+            borderLayer.borderWidth = newValue
+        }
+    }
+    
     func layoutBorderLayer() {
         let inset = -borderWidth / 2
         let insets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
         borderLayer.frame = bounds.inset(by: insets)
-    }
-}
-
-// MARK: -
-extension CAShapeLayer {
-    open override func action(forKey event: String) -> CAAction? {
-        return nil
     }
 }

@@ -6,7 +6,30 @@
 //  Copyright © 2019 CultivR. All rights reserved.
 //
 
-public extension UIView {
+
+// MARK: -
+@IBDesignable public final class ShadowView: UIView {
+    @IBInspectable private var shadowSpread: CGFloat = 0
+}
+
+// MARK: -
+public extension ShadowView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateShadowPath()
+    }
+}
+
+// MARK: -
+private extension ShadowView {
+    func updateShadowPath() {
+        let inset = -shadowSpread
+        let rect = bounds.insetBy(dx: inset, dy: inset)
+        layer.shadowPath = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).cgPath
+    }
+}
+
+private extension UIView {
     @IBInspectable var shadowOpacity: Float {
         get {
             return layer.shadowOpacity
@@ -21,7 +44,7 @@ public extension UIView {
             return layer.shadowRadius
         }
         set {
-            layer.shadowRadius = newValue
+            layer.shadowRadius = newValue / 2
         }
     }
     
