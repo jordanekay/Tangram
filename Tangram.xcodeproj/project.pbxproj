@@ -12,7 +12,6 @@
 		173A24E22268D07D00ADF0C9 /* NibCustomLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A24E12268D07D00ADF0C9 /* NibCustomLoadable.swift */; };
 		173A24E92268F96500ADF0C9 /* Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A24E82268F96500ADF0C9 /* Inspectable.swift */; };
 		176A253B226AB2210064488F /* CustomDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A253A226AB2210064488F /* CustomDisplaying.swift */; };
-		176A2541226AB32E0064488F /* CustomInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2540226AB32E0064488F /* CustomInspectable.swift */; };
 		176A2543226E27E70064488F /* Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2542226E27E70064488F /* Custom.swift */; };
 		17D4F251228485D200FDD335 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4F250228485D200FDD335 /* Layer.swift */; };
 		17DFCA13225EBCA900871C7D /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFCA11225EBC7100871C7D /* Variant.swift */; };
@@ -34,7 +33,6 @@
 		173A24E12268D07D00ADF0C9 /* NibCustomLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibCustomLoadable.swift; sourceTree = "<group>"; };
 		173A24E82268F96500ADF0C9 /* Inspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspectable.swift; sourceTree = "<group>"; };
 		176A253A226AB2210064488F /* CustomDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDisplaying.swift; sourceTree = "<group>"; };
-		176A2540226AB32E0064488F /* CustomInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInspectable.swift; sourceTree = "<group>"; };
 		176A2542226E27E70064488F /* Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.swift; sourceTree = "<group>"; };
 		1772ABBF1D188BA0007DC99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D4F250228485D200FDD335 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				173A24E82268F96500ADF0C9 /* Inspectable.swift */,
-				176A2540226AB32E0064488F /* CustomInspectable.swift */,
 			);
 			path = Inspectable;
 			sourceTree = "<group>";
@@ -262,7 +259,6 @@
 				173A24E22268D07D00ADF0C9 /* NibCustomLoadable.swift in Sources */,
 				17F80310225594A300212525 /* View.swift in Sources */,
 				17F29F1722825F67009F5121 /* Shadow.swift in Sources */,
-				176A2541226AB32E0064488F /* CustomInspectable.swift in Sources */,
 				176A253B226AB2210064488F /* CustomDisplaying.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

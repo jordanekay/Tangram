@@ -8,30 +8,15 @@
 
 public protocol NibCustomLoadable: NibLoadable, Custom {
     typealias LoadedVariant = CustomVariant
-    
-    func setupOutletContent(for variant: LoadedVariant)
-}
-
-public extension NibCustomLoadable {
-    func setupOutletContent(for variant: LoadedVariant) {
-        return
-    }
 }
 
 public extension NibCustomLoadable where LoadedVariant: RawRepresentable, LoadedVariant.RawValue == String {
-    func replacementViewLoadedFromNib(byInterfaceBuilder: Bool) throws -> NibLoadable {
-        guard let variant = variant else { throw NibError.invalidVariantName }
-        return try! Self.viewLoadedFromNib(of: variant, byInterfaceBuilder: byInterfaceBuilder)
+    var variant: LoadedVariant {
+        return variantName.flatMap(LoadedVariant.init) ?? Self.defaultVariant
     }
     
-    func setupOutletContent() {
-        setupOutletContent(for: variant!)
-    }
-}
-
-extension NibCustomLoadable where LoadedVariant: RawRepresentable, LoadedVariant.RawValue == String {
-    var variant: LoadedVariant? {
-        return variantName.map(LoadedVariant.init) ?? Self.defaultVariant
+    func replacementViewLoadedFromNib(byInterfaceBuilder: Bool) throws -> NibLoadable {
+        return try! Self.viewLoadedFromNib(of: variant, byInterfaceBuilder: byInterfaceBuilder)
     }
 }
 

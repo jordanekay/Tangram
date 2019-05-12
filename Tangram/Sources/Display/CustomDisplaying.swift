@@ -6,14 +6,6 @@
 //  Copyright © 2019 CultivR. All rights reserved.
 //
 
-public protocol CustomDisplaying: Displaying, Custom {
+public protocol CustomDisplaying: Custom, Displaying {
     typealias DisplayVariant = CustomVariant
-    
-    func display(_ model: Model, with variant: DisplayVariant)
-}
-
-public extension CustomDisplaying where Self: NibCustomLoadable, DisplayVariant: RawRepresentable, DisplayVariant.RawValue == String {
-    func display(_ model: Model) {
-        display(model, with: variant!)
-    }
 }

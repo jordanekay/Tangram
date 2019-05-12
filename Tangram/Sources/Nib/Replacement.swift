@@ -35,8 +35,6 @@ private extension UIView {
 
         if isInterfaceBuilder {
             replacementView.finishLoading(toReplace: self)
-        } else {
-            replacementView.setupOutletContent()
         }
         
         return replacementView
