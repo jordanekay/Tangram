@@ -18,6 +18,7 @@ extension UIView {
         
         contentView.frame = bounds
         addSubview(contentView)
+        addEdgeConstraints(to: contentView)
         
         contentView.subviews.forEach { $0.prepareForInterfaceBuilder() }
     }
@@ -48,10 +49,16 @@ private extension UIView {
     }
     
     func addConstraints(from view: UIView) {
-        for constraint in view.constraints where constraint.firstItem === view {
-            let replacementConstraint = NSLayoutConstraint(item: self, attribute: constraint.firstAttribute, relatedBy: constraint.relation, toItem: constraint.secondItem, attribute: constraint.secondAttribute, multiplier: constraint.multiplier, constant: constraint.constant)
-            addConstraint(replacementConstraint)
+        let constraints = view.constraints.filter { $0.firstItem === view }.map {
+            NSLayoutConstraint(item: self, attribute: $0.firstAttribute, relatedBy: $0.relation, toItem: $0.secondItem, attribute: $0.secondAttribute, multiplier: $0.multiplier, constant: $0.constant)
         }
+        addConstraints(constraints)
+    }
+    
+    func addEdgeConstraints(to contentView: UIView) {
+        let attributes: [NSLayoutConstraint.Attribute] = [.top, .left, .bottom, .right]
+        let constraints = attributes.map { NSLayoutConstraint(item: self, attribute: $0, relatedBy: .equal, toItem: contentView, attribute: $0, multiplier: 1, constant: 0)}
+        addConstraints(constraints)
     }
 }
 
