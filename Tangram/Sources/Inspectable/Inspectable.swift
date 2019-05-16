@@ -11,6 +11,12 @@ public protocol Inspectable: NibLoadable {
 }
 
 public extension Inspectable {
+    func displayInspectableContent<Subview: Displaying>(from representation: Subview.Model, in subview: Subview) {
+        let subview = subview.subviews.first as! Subview
+        subview.display(representation)
+    }
+    
+    // MARK: NibLoadable
     func finishLoading(toReplace view: UIView) {
         setInspectableContent(from: view as! Self)
     }

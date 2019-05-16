@@ -20,7 +20,9 @@ extension UIView {
         addSubview(contentView)
         addEdgeConstraints(to: contentView)
         
-        contentView.subviews.forEach { $0.prepareForInterfaceBuilder() }
+        if contentView.constraints.count > 0 {
+            contentView.frame.size = contentView.systemLayoutSizeFitting(bounds.size)
+        }
     }
 }
 
@@ -33,8 +35,9 @@ private extension UIView {
         let replacementView = try! nibLoadable.replacementViewLoadedFromNib(byInterfaceBuilder: isInterfaceBuilder)
         replacementView.setProperties(from: self)
         replacementView.addConstraints(from: self)
-
+        
         if isInterfaceBuilder {
+            replacementView.subviews.forEach { $0.prepareForInterfaceBuilder() }
             replacementView.finishLoading(toReplace: self)
         }
         

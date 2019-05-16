@@ -28,9 +28,7 @@ public extension NibLoadable {
     }
 
     static func hostedView(of variant: Variant) -> UIView {
-        let view = try! viewLoadedFromNib(of: variant, byInterfaceBuilder: false)
-        view.restorationIdentifier = variant.name
-        return view
+        return try! viewLoadedFromNib(of: variant, byInterfaceBuilder: false)
     }
 }
 
@@ -46,8 +44,12 @@ extension NibLoadable {
         let topLevelObjects = nib.instantiate(withOwner: nil, options: nil)
         guard let view = topLevelObjects.first as? Self else { throw NibError.contentsInvalid }
         
+        view.restorationIdentifier = variant.name
         view.translatesAutoresizingMaskIntoConstraints = byInterfaceBuilder
-        view.setupOutletContent()
+        if !byInterfaceBuilder {
+            view.setupOutletContent()
+        }
+        
         return view
     }
 }
