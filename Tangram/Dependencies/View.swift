@@ -7,3 +7,5 @@
 //
 
 @_exported import UIKit
+
+@_exported import class MapKit.MKMapView

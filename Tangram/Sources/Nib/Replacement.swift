@@ -14,6 +14,7 @@ extension UIView {
     }
     
     override open func prepareForInterfaceBuilder() {
+        awakeFromNib()
         guard let contentView = replacementView else { return }
         
         contentView.frame = bounds
