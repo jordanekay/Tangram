@@ -22,6 +22,7 @@
 		173A24E92268F96500ADF0C9 /* Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A24E82268F96500ADF0C9 /* Inspectable.swift */; };
 		176A253B226AB2210064488F /* CustomDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A253A226AB2210064488F /* CustomDisplaying.swift */; };
 		176A2543226E27E70064488F /* Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2542226E27E70064488F /* Custom.swift */; };
+		17B4D5DA22BD477B004024FA /* Tangram.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B4D5D922BD477B004024FA /* Tangram.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17D4F251228485D200FDD335 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4F250228485D200FDD335 /* Layer.swift */; };
 		17D507E12291A5810092B5CC /* Customizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D507E02291A5810092B5CC /* Customizable.swift */; };
 		17D50800229322EA0092B5CC /* Bordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D507FF229322EA0092B5CC /* Bordered.swift */; };
@@ -45,6 +46,7 @@
 		176A253A226AB2210064488F /* CustomDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDisplaying.swift; sourceTree = "<group>"; };
 		176A2542226E27E70064488F /* Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.swift; sourceTree = "<group>"; };
 		1772ABBF1D188BA0007DC99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17B4D5D922BD477B004024FA /* Tangram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tangram.h; sourceTree = "<group>"; };
 		17D4F250228485D200FDD335 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		17D507E02291A5810092B5CC /* Customizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customizable.swift; sourceTree = "<group>"; };
 		17D507FF229322EA0092B5CC /* Bordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bordered.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		175B360C1EBD2060004FA581 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				17B4D5D922BD477B004024FA /* Tangram.h */,
 				1772ABBF1D188BA0007DC99F /* Info.plist */,
 			);
 			path = Resources;
@@ -194,6 +197,7 @@
 			files = (
 				17190D35229457D60076072B /* CustomizableView.swift in Headers */,
 				17190D36229457D80076072B /* CustomizableImageView.swift in Headers */,
+				17B4D5DA22BD477B004024FA /* Tangram.h in Headers */,
 				17190D37229457DA0076072B /* CustomizableSwitch.swift in Headers */,
 				17190D3E229466720076072B /* CustomizableMapView.swift in Headers */,
 			);
